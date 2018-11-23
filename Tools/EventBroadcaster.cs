@@ -20,7 +20,7 @@ public static class EventBroadcaster
 	public static void AddActionToEvent(string eventName, Action<object> action)
 	{
         if (eventName == "")
-            throw new NullReferenceException("No empty string for event names pliz");
+            throw new NullReferenceException("");
 		// Add an action to the list. Do nothing if the action is already registered
 		if (!_registeredActions.ContainsKey(eventName))
 			_registeredActions.Add(eventName, action);
