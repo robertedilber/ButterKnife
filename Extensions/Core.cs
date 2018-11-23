@@ -89,16 +89,6 @@ public static class GameObjects
 			t = g.AddComponent<T>();
 		return t;
 	}
-
-	public static LineRenderer AddLineRenderer(this GameObject g, Materials material)
-	{
-		LineRenderer t = g.EnsureComponent<LineRenderer>();
-		t.startWidth = .01f;
-		t.endWidth = .01f;
-		t.Set(material);
-		//t.minVertexDistance = 0f;
-		return t;
-	}
 }
 
 public static class UIHelpers
