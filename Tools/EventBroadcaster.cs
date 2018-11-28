@@ -19,8 +19,8 @@ public static class EventBroadcaster
 	/// <param name="action">Action to be mapped to the event</param>
 	public static void AddActionToEvent(string eventName, Action<object> action)
 	{
-        if (eventName == "")
-            throw new NullReferenceException("");
+		if (eventName == "")
+			throw new NullReferenceException("");
 		// Add an action to the list. Do nothing if the action is already registered
 		if (!_registeredActions.ContainsKey(eventName))
 			_registeredActions.Add(eventName, action);
@@ -44,8 +44,8 @@ public static class EventBroadcaster
 	/// <param name="eventName">Event to be called</param>
 	public static void Call(string eventName, object arg = null)
 	{
-        if (eventName == "")
-            throw new ArgumentNullException("Don't call unnamed events");
+		if (eventName == "")
+			throw new ArgumentNullException("Don't call unnamed events");
 		if (_registeredActions.ContainsKey(eventName))
 		{
 			_registeredActions[eventName]?.Invoke(arg);

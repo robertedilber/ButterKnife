@@ -21,4 +21,7 @@ public static class VectorHelpers
 	}
 
 	public static Vector3 GetMiddlePoint(Vector3 a, Vector3 b) => a + (b - a) / 2;
+
+	public static Vector3 LocalToLocal(LightweightTransform from, LightweightTransform to, Vector3 point)
+		=> to.WorldToLocalVector(from.LocalToWorldVector(point));
 }
