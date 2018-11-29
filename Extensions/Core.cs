@@ -80,9 +80,9 @@ public static class Transforms
 	public static Vector3 LocalToWorldVector(this Transform t, Vector3 pointInLocalSpace)
 		=> t.localToWorldMatrix.MultiplyPoint3x4(pointInLocalSpace);
 
-	public static Vector3 WorldToLocalVector(this LightweightTransform t, Vector3 pointInWorldSpace)
+	public static Vector3 WorldToLocalVector(this RecordableTransform t, Vector3 pointInWorldSpace)
 		=> ((Matrix4x4)t).inverse.MultiplyPoint3x4(pointInWorldSpace);
-	public static Vector3 LocalToWorldVector(this LightweightTransform t, Vector3 pointInLocalSpace)
+	public static Vector3 LocalToWorldVector(this RecordableTransform t, Vector3 pointInLocalSpace)
 		=> ((Matrix4x4)t).MultiplyPoint3x4(pointInLocalSpace);
 
 	// Rotations
@@ -91,9 +91,9 @@ public static class Transforms
 	public static Quaternion LocalToWorldQuaternion(this Transform t, Quaternion rotation)
 		=> t.rotation * rotation;
 
-	public static Quaternion WorldToLocalQuaternion(this LightweightTransform t, Quaternion rotation)
+	public static Quaternion WorldToLocalQuaternion(this RecordableTransform t, Quaternion rotation)
 	  => Quaternion.Inverse(t.Rotation) * rotation;
-	public static Quaternion LocalToWorldQuaternion(this LightweightTransform t, Quaternion rotation)
+	public static Quaternion LocalToWorldQuaternion(this RecordableTransform t, Quaternion rotation)
 		=> t.Rotation * rotation;
 }
 
