@@ -98,6 +98,16 @@ public static class GameObjects
 	}
 }
 
+public static class MaterialSwag
+{
+
+    public static void SetFloat(this Material[] mats, string s, float value)
+    {
+        for (int i = 0; i < mats.Length; i++)
+            mats[i].SetFloat(s, value);
+    }
+}
+
 public static class UIHelpers
 {
 	// Private fields

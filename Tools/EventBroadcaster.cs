@@ -25,7 +25,7 @@ public static class EventBroadcaster
 		if (!_registeredActions.ContainsKey(eventName))
 			_registeredActions.Add(eventName, action);
 		else
-			_registeredActions[eventName] = action;
+			_registeredActions[eventName] += action;
 	}
 
 	/// <summary>
