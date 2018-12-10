@@ -89,6 +89,13 @@ public static class Transforms
 
 public static class GameObjects
 {
+
+    public static void SetActive(this GameObject[] objects, bool activation)
+    {
+        for (int i = 0; i < objects.Length; i++)
+            objects[i]?.SetActive(activation);
+    }
+
 	public static T EnsureComponent<T>(this GameObject g) where T : Component
 	{
 		T t = g.GetComponent<T>();
