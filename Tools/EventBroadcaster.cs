@@ -52,4 +52,9 @@ public static class EventBroadcaster
 			OnEventCalled?.Invoke(eventName, arg);
 		}
 	}
+
+    public static void Reset()
+    {
+        _registeredActions.Clear();
+    }
 }
