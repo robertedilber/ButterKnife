@@ -48,6 +48,9 @@ public static class VectorHelpers
         return angle + (angle < 0.0f ? 2 * Mathf.PI : 0);
     }
 
+    public static Vector3 UniformVector3(float value) => new Vector3(value, value, value);
+    public static Vector2 UniformVector2(float value) => new Vector2(value, value);
+
     #endregion
 
     #region Extensions Methods
