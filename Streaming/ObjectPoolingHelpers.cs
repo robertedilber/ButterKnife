@@ -1,8 +1,5 @@
 namespace ButterKnife.Pooling
 {
-
-
-
     public static class ObjectPoolingHelpers
     {
         public static GameObject[] GeneratePool(GameObject objectToInstantiate, int amountToPool)
