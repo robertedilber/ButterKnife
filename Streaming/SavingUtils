@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.IO;
+
+public static class SavingUtils
+{
+
+    public const string C_GameDataProjectFilePath = "/StreamingAssets/data.json";
+    public static void SaveAsset<T>(T obj)
+    {
+        string dataAsJson = JsonUtility.ToJson(obj);
+        string filePath = Application.dataPath + C_GameDataProjectFilePath;
+        File.WriteAllText(filePath, dataAsJson);
+    }
+
+    public static T LoadAsset<T>(string filePath = null) //
+    {
+        if (filePath == null)
+            filePath = Application.dataPath + C_GameDataProjectFilePath;
+
+        if (File.Exists(filePath))
+        {
+            string dataAsJson = File.ReadAllText(filePath);
+            T gameData = JsonUtility.FromJson<T>(dataAsJson);
+            return gameData;
+        }
+        else
+            throw new System.Exception("Save doesn't exist");
+    }
+}
